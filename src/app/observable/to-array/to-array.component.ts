@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription, from, interval, of, take, toArray } from 'rxjs';
 
 @Component({
   selector: 'app-to-array',
@@ -7,9 +8,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToArrayComponent implements OnInit {
 
+  sourceSub?: Subscription;
+
+  users = [
+      {name: 'Bhavik', skills: 'Angular'},
+      {name: 'Vishal', skills: 'JavaScript'},
+      {name: 'Aditya', skills: 'React'}
+  ]
   constructor() { }
 
   ngOnInit(): void {
+
+    // Ex - 01
+    const source = interval(1000);
+    this.sourceSub = source.pipe(take(5), toArray())
+      .subscribe(res => {
+        console.log(res);
+      })
+
+      // Ex - 02
+      const source2 = from(this.users)
+
+      source2.pipe(toArray())
+      .subscribe(res=>{
+        console.log(res);
+      })
+
+      // Ex - 03
+
+      const source3 = of('Bhavik','Manoj','Sejpal');
+
+      source3.pipe(toArray()).subscribe(res =>{
+        console.log(res);
+      })
+
   }
 
 }

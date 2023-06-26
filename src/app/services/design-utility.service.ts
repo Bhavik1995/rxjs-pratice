@@ -8,10 +8,10 @@ export class DesignUtilityService {
   constructor() { }
 
 
-  print(val: any){
+  print(val: any,container: string){
     let el = document.createElement('li');
     el.innerText = val;
 
-    document.getElementById('elContainer')?.appendChild(el)
+    document.getElementById(container)?.appendChild(el)
   }
 }

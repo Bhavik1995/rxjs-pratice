@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
+import { from, of } from 'rxjs';
 import { DesignUtilityService } from 'src/app/services/design-utility.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { DesignUtilityService } from 'src/app/services/design-utility.service';
 })
 export class OfFromComponent implements OnInit {
 
+
+  obsMsg? :any;
   constructor(private designService: DesignUtilityService) { }
 
   ngOnInit(): void {
@@ -20,7 +22,7 @@ export class OfFromComponent implements OnInit {
     Obs1.subscribe(res =>{
       console.log(res); 
 
-      this.designService.print(res);
+      this.designService.print(res,'elContainer');
     })
 
     const Obs2 = of({a:'Bhavik',b:'Manoj',c:'Sejpal'});
@@ -28,8 +30,45 @@ export class OfFromComponent implements OnInit {
     Obs2.subscribe(res =>{
       console.log(res); 
 
-      // this.designService.print(res);
+      this.obsMsg = res;
     })
+
+    // FROM Example - Array
+
+    const Obs3 = from(['Bhavik','Manoj','Sejpal']);
+
+    Obs3.subscribe(res =>{
+      console.log(res); 
+
+      this.designService.print(res,'elContainer3');
+    })
+
+    // FROM Example - Promise
+
+    const promise = new Promise(resolve =>{
+      setTimeout(() => {
+          resolve('Promise Resolved');
+      }, 3000);
+    })
+
+    const Obs4 = from(promise);
+
+    Obs4.subscribe(res =>{
+      console.log(res); 
+
+      this.designService.print(res,'elContainer4');
+    })
+
+    // FROM Example - Strring
+
+    const Obs5 = from('Welcome to Hello');
+
+    Obs5.subscribe(res =>{
+      console.log(res); 
+
+      this.designService.print(res,'elContainer5');
+    })
+
   }
 
 }

@@ -23,7 +23,7 @@ export class IntervalComponent implements OnInit {
 
       this.obsMessage = 'Video '+res;
 
-      this.designUtlity.print(this.obsMessage)
+      this.designUtlity.print(this.obsMessage,'elContainer')
       
       if(res >= 5){ 
         this.videoSubcription?.unsubscribe(); 

@@ -9,6 +9,7 @@ import { DesignUtilityService } from 'src/app/services/design-utility.service';
 })
 export class CustomComponent implements OnInit {
 
+  techStatus?: string;
   constructor(private designUtility: DesignUtilityService) { }
 
   ngOnInit(): void {
@@ -23,12 +24,12 @@ export class CustomComponent implements OnInit {
 
       setTimeout(() => {
         observer.next('React');
-        
+        observer.error(new Error('Error'));
       }, 3000);
 
       setTimeout(() => {
         observer.next('TypeScript');
-        observer.complete()
+        observer.complete();
       }, 4000);
      
     })
@@ -36,8 +37,18 @@ export class CustomComponent implements OnInit {
     cusObs1.subscribe(res =>{
       console.log(res);
 
-      this.designUtility.print(res,'elContainer')
+      this.designUtility.print(res,'elContainer');
+    },
+    (err)=>{
+      this.techStatus = 'Error';
+    },()=>{
+      this.techStatus = 'Completed';
     })
+
+
+    // Ex - 02 (Custom Observables)
+
+    // Ex - 03 (Random Names)
   }
 
 }

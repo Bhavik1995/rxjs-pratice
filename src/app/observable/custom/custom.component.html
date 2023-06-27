@@ -7,7 +7,7 @@
             <strong>Ex - 01 (Manual)</strong>
             <hr>
 
-            <ul class="techList" id="elContainer">
+            <ul [ngClass]="techStatus == 'Completed'? 'completed' : techStatus== 'Error' ? 'error' : ''" class="techList" id="elContainer">
                 
             </ul>
         </div>

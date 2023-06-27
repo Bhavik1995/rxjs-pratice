@@ -36,19 +36,19 @@ export class CustomComponent implements OnInit, OnDestroy {
         observer.next('TypeScript');
         observer.complete();
       }, 3000);
-     
+
     })
 
-    cusObs1.subscribe(res =>{
+    cusObs1.subscribe(res => {
       // console.log(res);
 
-      this.designUtility.print(res,'elContainer');
+      this.designUtility.print(res, 'elContainer');
     },
-    (err)=>{
-      this.techStatus = 'Error';
-    },()=>{
-      this.techStatus = 'Completed';
-    })
+      (err) => {
+        this.techStatus = 'Error';
+      }, () => {
+        this.techStatus = 'Completed';
+      })
 
 
     // Ex - 02 (Custom Observables)
@@ -57,54 +57,54 @@ export class CustomComponent implements OnInit, OnDestroy {
     const cusObs2 = new Observable((observer: Observer<string>) => {
 
       let count = 0;
-        setInterval(()=>{
+      setInterval(() => {
         observer.next(techArray[count]);
-        if(count >= 2){
+        if (count >= 2) {
           observer.error('Error')
         }
-        if(count>=5){
+        if (count >= 5) {
           observer.complete()
         }
         count++;
-      },1000)
+      }, 1000)
 
     })
 
-    this.sub2 = cusObs2.subscribe(res =>{ 
+    this.sub2 = cusObs2.subscribe(res => {
       // console.log('Custom =>',res);
 
-      this.designUtility.print(res,'elContainer2');
-    },(err)=>{
+      this.designUtility.print(res, 'elContainer2');
+    }, (err) => {
       this.techStatus2 = 'Error';
-    },()=>{
+    }, () => {
       this.techStatus2 = 'Completed';
     })
 
     // Ex - 03 (Random Names)
 
-    const nameArray = ['Bhavik', 'Manoj', 'Sejpal','John', 'Alex', 'Robert'];
-    const cusObs3 = new Observable((observer: Observer<string>)=>{
+    const nameArray = ['Bhavik', 'Manoj', 'Sejpal', 'John', 'Alex', 'Robert'];
+    const cusObs3 = new Observable((observer: Observer<string>) => {
 
       let count = 0;
-      setInterval(()=>{
+      setInterval(() => {
         observer.next(nameArray[count]);
-        if(count >= 2){
+        if (count >= 2) {
           // observer.error('Error')
         }
-        if(count>=5){
+        if (count >= 5) {
           observer.complete()
         }
         count++;
-      },1000)
+      }, 1000)
     })
 
-    cusObs3.subscribe(res =>{
+    cusObs3.subscribe(res => {
       console.log(res)
 
       this.names = res;
-    },(err)=>{
+    }, (err) => {
       this.nameStatus = 'Error';
-    },()=>{
+    }, () => {
       this.nameStatus = 'Completed';
     })
   }

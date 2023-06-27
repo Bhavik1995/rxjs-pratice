@@ -16,10 +16,8 @@
             <strong>Ex - 02 (Custom Interval Observable)</strong>
             <hr>
 
-            <ul class="techList">
-                <li>Angular</li>
-                <li>React</li>
-                <li>TypeScript</li>
+            <ul [ngClass]="techStatus2 == 'Completed'? 'completed' : techStatus2 == 'Error' ? 'error' : ''" class="techList" id="elContainer2">
+              
             </ul>
         </div>
     </div>
@@ -32,12 +30,12 @@
             <br>
             <br>
             <p class="bg-light py-2 px-3 border rounded">
-                <strong>Random Names: </strong>'Bhavik', 'Manoj', 'Sejpal','John', 'Alex', 'Robert', 
+                <strong>Random Names: </strong>'Bhavik', 'Manoj', 'Sejpal','John', 'Alex', 'Robert'
             </p>
             <hr>
 
-            <p>Current Name: <strong class="text-success">Bhavik</strong></p>
-            <span class="badge text-bg-success">Success</span>
+            <p>Current Name: <strong>{{names}}</strong></p>
+            <span [ngClass]="nameStatus == 'Completed'? 'badge text-bg-success': nameStatus == 'Error' ? 'badge text-bg-danger' : ''" class="badge text-bg-primary">{{nameStatus == 'Completed' ? 'Success' : nameStatus == 'Error' ? 'Error' : 'Running'}}</span>
         </div>
     </div>
 </div>

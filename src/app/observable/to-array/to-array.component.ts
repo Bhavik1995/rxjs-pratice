@@ -28,16 +28,13 @@ export class ToArrayComponent implements OnInit {
 
       // Ex - 02
       const source2 = from(this.users)
-
       source2.pipe(toArray())
       .subscribe(res=>{
         console.log(res);
       })
 
       // Ex - 03
-
       const source3 = of('Bhavik','Manoj','Sejpal');
-
       source3.pipe(toArray()).subscribe(res =>{
         console.log(res);
       })

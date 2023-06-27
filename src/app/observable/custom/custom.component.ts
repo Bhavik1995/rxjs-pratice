@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
+import { DesignUtilityService } from 'src/app/services/design-utility.service';
 
 @Component({
   selector: 'app-custom',
@@ -8,18 +9,34 @@ import { Observable, Observer } from 'rxjs';
 })
 export class CustomComponent implements OnInit {
 
-  constructor() { }
+  constructor(private designUtility: DesignUtilityService) { }
 
   ngOnInit(): void {
 
     // Ex - 01 (Manual)
 
     const cusObs1 = new Observable((observer: Observer<string>) => {
-      observer.next('Data Emit - 1');
+
+      setTimeout(() => {
+        observer.next('Angular');
+      }, 2000);
+
+      setTimeout(() => {
+        observer.next('React');
+        
+      }, 3000);
+
+      setTimeout(() => {
+        observer.next('TypeScript');
+        observer.complete()
+      }, 4000);
+     
     })
 
     cusObs1.subscribe(res =>{
-      console.log(res)
+      console.log(res);
+
+      this.designUtility.print(res,'elContainer')
     })
   }
 

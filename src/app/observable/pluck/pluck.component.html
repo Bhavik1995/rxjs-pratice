@@ -1,0 +1,60 @@
+<div class="container my-3">
+    <h1>Pluck Operator</h1>
+    <br>
+
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Ex - 01</strong>
+            <hr>
+
+            <p class="bg-light py-2 px-3 border rounded">
+                <strong>Pluck:-</strong> By Property
+            </p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of arrayData">
+                        <td>{{item}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-6">
+            <strong>Ex - 02</strong>
+            <hr>
+
+            <p class="bg-light py-2 px-3 border rounded">
+                <strong>Pluck:-</strong> By Nested Property
+            </p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of arrayData">
+                        <td>{{item}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-12">
+            <strong>Ex - 03</strong>
+            <hr>
+
+            <p class="bg-light py-2 px-3 border rounded">
+                <strong>Pluck:-</strong> Map Object Data
+            </p>
+
+            <ul id="elContainer"></ul>
+        </div>
+    </div>

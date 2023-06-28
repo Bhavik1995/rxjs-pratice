@@ -8,6 +8,7 @@ import { IntervalComponent } from './observable/interval/interval.component';
 import { OfFromComponent } from './observable/of-from/of-from.component';
 import { ToArrayComponent } from './observable/to-array/to-array.component';
 import { CustomComponent } from './observable/custom/custom.component';
+import { MapComponent } from './observable/map/map.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,9 @@ const routes: Routes = [
       },
       {
         path: 'custom', component: CustomComponent
+      },
+      {
+        path: 'map', component: MapComponent
       }
     ]
   },

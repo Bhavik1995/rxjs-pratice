@@ -10,6 +10,7 @@ export class PluckComponent implements OnInit {
 
 
   arrayData?: any;
+  arrayData2?: any;
   constructor() { }
 
   users = [
@@ -57,6 +58,9 @@ export class PluckComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+    // Ex- 01
+
     from(this.users).pipe
       (
         pluck('name'),
@@ -66,6 +70,19 @@ export class PluckComponent implements OnInit {
         console.log(res)
 
         this.arrayData = res;
+      })
+
+    // Ex - 02
+    
+    from(this.users).pipe
+      (
+        pluck('job','title'),
+        toArray()
+      )
+      .subscribe(res => {
+        console.log(res)
+
+        this.arrayData2 = res;
       })
   }
 

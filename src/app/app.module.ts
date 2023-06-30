@@ -19,6 +19,7 @@ import { FilterComponent } from './observable/filter/filter.component';
 import { TapComponent } from './observable/tap/tap.component';
 import { TakeComponent } from './observable/take/take.component';
 import { RetryComponent } from './observable/retry/retry.component';
+import { DebouncetimeComponent } from './observable/debouncetime/debouncetime.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RetryComponent } from './observable/retry/retry.component';
     FilterComponent,
     TapComponent,
     TakeComponent,
-    RetryComponent
+    RetryComponent,
+    DebouncetimeComponent
   ],
   imports: [
     BrowserModule,

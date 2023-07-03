@@ -1,4 +1,21 @@
 <div class="container my-3">
     <h1>Debounce Time & Distnict Until Changed</h1>
     <br>
+
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Ex - 01 Debounce Time</strong>
+            <hr>
+            <div class="row">
+                <label class="col-sm-2 col-form-label col-form-label-lg">Search:-</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-lg"
+                  placeholder="Search here" #myInput>
+                </div>
+              </div>
+              <br>
+              <span *ngIf="requestedData != null">Requested Data: <strong class="text-success">{{requestedData}}</strong></span>
+        </div>
+    </div>
 </div>
+

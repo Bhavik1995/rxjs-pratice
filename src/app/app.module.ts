@@ -20,6 +20,7 @@ import { TapComponent } from './observable/tap/tap.component';
 import { TakeComponent } from './observable/take/take.component';
 import { RetryComponent } from './observable/retry/retry.component';
 import { DebouncetimeComponent } from './observable/debouncetime/debouncetime.component';
+import { LoadingBarModule } from '@ngx-loading-bar/core';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DebouncetimeComponent } from './observable/debouncetime/debouncetime.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    LoadingBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

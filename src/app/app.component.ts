@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DesignUtilityService } from './services/design-utility.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,17 @@ import { Component } from '@angular/core';
 `,
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'rxjs-pratice';
+
+  exclusive?: boolean;
+
+  constructor(private designUtlity: DesignUtilityService) {}
+
+  ngOnInit(){
+    this.designUtlity.exclusive.subscribe(res =>{
+      this.exclusive = res;
+    })
+  }
+
 }

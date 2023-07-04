@@ -11,7 +11,7 @@ export class SubjectComponent implements OnInit, OnDestroy {
   userName?: string;
 
   constructor(private designUtlity: DesignUtilityService) {
-    this.designUtlity.userName.subscribe(res =>{
+    this.designUtlity.userName.subscribe(res =>{  
       this.userName = res;
     })
    }

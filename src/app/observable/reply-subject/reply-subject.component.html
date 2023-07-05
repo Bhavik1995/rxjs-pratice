@@ -28,9 +28,9 @@
             <hr>
 
             <ul class="video-list">
-                <li><strong>Video: </strong> Video Name</li>
-                <li><strong>Video: </strong> Video Name</li>
-                <li><strong>Video: </strong> Video Name</li>
+                <li *ngFor="let item of user1List">
+                    <strong>Video: </strong> {{item}}
+                </li>
             </ul>
         </div>
 
@@ -39,10 +39,12 @@
             <hr>
 
             <ul class="video-list">
-                <li><strong>Video: </strong> Video Name</li>
-                <li><strong>Video: </strong> Video Name</li>
-                <li><strong>Video: </strong> Video Name</li>
+                <li *ngFor="let item of user2List">
+                    <strong>Video: </strong> {{item}}
+                </li>
             </ul>
+
+            <button class="btn btn-success">Subscribe</button>
         </div>
         
         <div class="col-md-4">
@@ -50,10 +52,12 @@
             <hr>
 
             <ul class="video-list">
-                <li><strong>Video: </strong> Video Name</li>
-                <li><strong>Video: </strong> Video Name</li>
-                <li><strong>Video: </strong> Video Name</li>
+                <li *ngFor="let item of user3List">
+                    <strong>Video: </strong> {{item}}
+                </li>
             </ul>
+
+            <button class="btn btn-danger">Unsubscribe</button>
         </div>
     </div>
 </div>

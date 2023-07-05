@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReplySubjectComponent implements OnInit {
 
+  // List Data
+  user1List = [
+    'Angular 1',
+    'Angular 2',
+  ];
+  user2List = [];
+  user3List = [];
+
   constructor() { }
 
   ngOnInit(): void {

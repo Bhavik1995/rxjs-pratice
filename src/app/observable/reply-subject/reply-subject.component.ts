@@ -36,7 +36,6 @@ export class ReplySubjectComponent implements OnInit {
   ngOnInit() {
 
     this.designUtility.videEmit.subscribe(res => {
-      // console.log(res);
       this.user1List.push(res)
     })
   }

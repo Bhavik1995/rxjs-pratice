@@ -17,6 +17,7 @@ import { RetryComponent } from './observable/retry/retry.component';
 import { DebouncetimeComponent } from './observable/debouncetime/debouncetime.component';
 import { SubjectComponent } from './observable/subject/subject.component';
 import { ReplySubjectComponent } from './observable/reply-subject/reply-subject.component';
+import { AsyncSubjectComponent } from './observable/async-subject/async-subject.component';
 
 const routes: Routes = [
   {
@@ -70,6 +71,9 @@ const routes: Routes = [
       },
       {
         path: 'reply-subject', component: ReplySubjectComponent
+      },
+      {
+        path: 'async-subject', component: AsyncSubjectComponent
       }
     ]
   },

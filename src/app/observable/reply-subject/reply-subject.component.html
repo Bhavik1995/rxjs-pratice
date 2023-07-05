@@ -5,22 +5,26 @@
 
     <div class="row">
         <div class="col">
-            <h3>Add Videos</h3>
+            <h3>{{methodInterval? 'Interval Started' : 'Add Videos'}}</h3>
+        </div>
+
+        <div class="col text-end">
+            <button class="btn btn-warning" (click)="toggleMethod()">Toggle Method</button>
         </div>
     </div>
     <hr>
 
-    <div class="row justify-content-center">
+    <div *ngIf="!methodInterval" class="row justify-content-center">
         <div class="col-md-4">
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" #video>
         </div>
 
         <div class="col-md-3">
-            <button class="btn btn-success">Add Video</button>
+            <button class="btn btn-success" (click)="onVideoAdd(video.value)">Add Video</button>
         </div>
     </div>
 
-    <hr>
+    <hr *ngIf="!methodInterval">
 
     <div class="row">
         <div class="col-md-4">
@@ -44,7 +48,8 @@
                 </li>
             </ul>
 
-            <button class="btn btn-success">Subscribe</button>
+            <button class="btn" [ngClass] = "subscribeMode2? 'btn-danger' : 'btn-success'" 
+            (click)="user2Subscribe()">{{subscribeMode2? 'Unsubscribe' : 'Subscribe'}}</button>
         </div>
         
         <div class="col-md-4">
@@ -57,7 +62,8 @@
                 </li>
             </ul>
 
-            <button class="btn btn-danger">Unsubscribe</button>
+            <button class="btn" [ngClass] = "subscribeMode3? 'btn-danger' : 'btn-success'" 
+            (click)="user3Subscribe()">{{subscribeMode3? 'Unsubscribe' : 'Subscribe'}}</button>
         </div>
     </div>
 </div>

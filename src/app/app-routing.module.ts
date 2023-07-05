@@ -16,6 +16,7 @@ import { TakeComponent } from './observable/take/take.component';
 import { RetryComponent } from './observable/retry/retry.component';
 import { DebouncetimeComponent } from './observable/debouncetime/debouncetime.component';
 import { SubjectComponent } from './observable/subject/subject.component';
+import { ReplySubjectComponent } from './observable/reply-subject/reply-subject.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,9 @@ const routes: Routes = [
       },
       {
         path: 'subject', component: SubjectComponent
+      },
+      {
+        path: 'reply-subject', component: ReplySubjectComponent
       }
     ]
   },

@@ -21,6 +21,7 @@ import { AsyncSubjectComponent } from './observable/async-subject/async-subject.
 import { ConcatComponent } from './observable/concat/concat.component';
 import { MergeComponent } from './observable/merge/merge.component';
 import { MergeMapComponent } from './observable/merge-map/merge-map.component';
+import { ConcatMapComponent } from './observable/concat-map/concat-map.component';
 
 const routes: Routes = [
   {
@@ -86,6 +87,9 @@ const routes: Routes = [
       },
       {
         path: 'merge-map', component: MergeMapComponent
+      },
+      {
+        path: 'concat-map', component: ConcatMapComponent
       }
     ]
   },

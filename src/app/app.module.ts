@@ -30,6 +30,7 @@ import { ConcatComponent } from './observable/concat/concat.component';
 import { MergeComponent } from './observable/merge/merge.component';
 import { MergeMapComponent } from './observable/merge-map/merge-map.component';
 import { ConcatMapComponent } from './observable/concat-map/concat-map.component';
+import { SwitchMapComponent } from './observable/switch-map/switch-map.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { ConcatMapComponent } from './observable/concat-map/concat-map.component
     ConcatComponent,
     MergeComponent,
     MergeMapComponent,
-    ConcatMapComponent
+    ConcatMapComponent,
+    SwitchMapComponent
   ],
   imports: [
     BrowserModule,

@@ -23,6 +23,7 @@ import { MergeComponent } from './observable/merge/merge.component';
 import { MergeMapComponent } from './observable/merge-map/merge-map.component';
 import { ConcatMapComponent } from './observable/concat-map/concat-map.component';
 import { SwitchMapComponent } from './observable/switch-map/switch-map.component';
+import { SwitchMapSearchComponent } from './observable/switch-map-search/switch-map-search.component';
 
 const routes: Routes = [
   {
@@ -94,6 +95,9 @@ const routes: Routes = [
       },
       {
         path: 'switch-map', component: SwitchMapComponent
+      },
+      {
+        path: 'switch-map-search', component: SwitchMapSearchComponent
       }
     ]
   },

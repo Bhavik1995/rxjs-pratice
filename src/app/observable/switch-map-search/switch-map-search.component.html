@@ -5,7 +5,9 @@
     <h5>Search Videos</h5>
     <form #searchForm="ngForm">
     <div class="mt-3">
-        <input type="text" class="form-control form-control-lg" name="seachTerm" autocomplete="off" required>
+        <input type="text" class="form-control form-control-lg" 
+        [(ngModel)]=""
+        name="seachTerm" autocomplete="off" required>
     </div>
     </form>
     <br>

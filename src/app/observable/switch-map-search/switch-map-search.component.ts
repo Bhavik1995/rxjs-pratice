@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, map, pluck } from 'rxjs';
+import { concatMap, debounceTime, distinctUntilChanged, filter, map, pluck, switchMap } from 'rxjs';
+import { Search } from 'src/app/interfaces/search.interface';
+import { SearchServiceService } from 'src/app/services/search-service.service';
 
 @Component({
   selector: 'app-switch-map-search',
@@ -9,20 +11,29 @@ import { debounceTime, distinctUntilChanged, map, pluck } from 'rxjs';
 })
 export class SwitchMapSearchComponent implements AfterViewInit {
 
-  @ViewChild('searchForm') searchForm?: NgForm
+  @ViewChild('searchForm') searchForm: NgForm
+  
+  constructor(private searchService: SearchServiceService) { }
 
-  constructor() { }
+  searchResults: Search;
 
   ngAfterViewInit(): void {
     
-    const formValue= this.searchForm?.valueChanges;
+    // this.searchService.getData('Bret').subscribe(res=>{
+    //   console.log(res)
+    // })
+    const formValue= this.searchForm.valueChanges;
     formValue?.pipe(
-      map(data=> data),
+     
+      map(data=> data.seachTerm),
       debounceTime(500),
-      distinctUntilChanged() 
+      distinctUntilChanged(),
+      switchMap(data => this.searchService.getData(data))
      )
      .subscribe(res =>{
        console.log(res)
+
+       this.searchResults = res;
      })
 
 

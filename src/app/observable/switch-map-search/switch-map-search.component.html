@@ -6,7 +6,7 @@
     <form #searchForm="ngForm">
     <div class="mt-3">
         <input type="text" class="form-control form-control-lg" 
-        [(ngModel)]=""
+        ngModel
         name="seachTerm" autocomplete="off" required>
     </div>
     </form>
@@ -24,19 +24,18 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Title & Description</th>
+                    <th scope="col">Name & Email</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let items of searchResults">
                     <th scope="row">1</th>
                     <td>
                         <strong>
-                            Title
+                            Bhavik
                         </strong>
-                        <p>Description</p>
+                        <p>bhavik.sejpal@knoxpo.com</p>
                     </td>
-                    
                 </tr>
             </tbody>
         </table>
